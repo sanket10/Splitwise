@@ -11,9 +11,9 @@ public class UserController {
 	
 	public void createUser(String input) {
 		String inputs[] = this.provideInputArgument(input);
-		if (inputs.length == 1) {
+		if (inputs.length == 2) {
 			try {
-				int userId = Integer.parseInt(inputs[0]);
+				int userId = Integer.parseInt(inputs[1]);
 
 				if (!this.userRecord.createUser(userId)) {
 					System.out.println("User already created");
@@ -28,11 +28,11 @@ public class UserController {
 	
 	public void addUserToUserTransaction(String input) {
 		String inputs[] = this.provideInputArgument(input);
-		if (inputs.length == 3) {
+		if (inputs.length == 4) {
 			try {
-				int giverId = Integer.parseInt(inputs[0]);
-				int takerId = Integer.parseInt(inputs[1]);
-				double amount = Double.parseDouble(inputs[2]);
+				int giverId = Integer.parseInt(inputs[1]);
+				int takerId = Integer.parseInt(inputs[2]);
+				double amount = Double.parseDouble(inputs[3]);
 
 				if (!this.userRecord.addTransaction(giverId, takerId, amount)) {
 					System.out.println("User doesn't exist");
@@ -48,9 +48,9 @@ public class UserController {
 	
 	public void showUserDetail(String input) {
 		String inputs[] = this.provideInputArgument(input);
-		if (inputs.length == 1) {
+		if (inputs.length == 2) {
 			try {
-				int userId = Integer.parseInt(inputs[0]);
+				int userId = Integer.parseInt(inputs[1]);
 				
 				System.out.println("User Detail - UserId : " + userId);
 				Map<Integer, Double> userDetails = this.userRecord.getUserRecord(userId);

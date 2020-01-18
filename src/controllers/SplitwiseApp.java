@@ -16,6 +16,7 @@ public class SplitwiseApp {
 		inputProcessor.addHandler("SHOW_USER_EXPENSE", userController::showUserDetail);
 		inputProcessor.addHandler("SHOW_GROUP_DETAILS", groupController::showGroupDetail);
 		inputProcessor.addHandler("REMOVE_USER_TO_GROUP", groupController::removeUserFromGroup);
+		inputProcessor.addHandler("CREATE_GROUP", groupController::createGroup);
 		
 		inputProcessor.listen();
 	}
